@@ -9,3 +9,4 @@
 5. npm i react-redux
 6. npm i redux-logger
 7. npm i reselect
+8. npm i redux-persist

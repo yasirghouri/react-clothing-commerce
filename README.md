@@ -11,3 +11,4 @@
 7. npm i reselect
 8. npm i redux-persist
 9. npm i lodash.memoize
+10. npm i react-stripe-checkout

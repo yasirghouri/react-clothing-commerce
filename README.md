@@ -10,3 +10,4 @@
 6. npm i redux-logger
 7. npm i reselect
 8. npm i redux-persist
+9. npm i lodash.memoize

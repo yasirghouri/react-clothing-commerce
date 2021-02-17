@@ -29,7 +29,7 @@ const googleSignInStyles = css`
   color: white;
 
   &:hover {
-    background-color: #375ae8;
+    background-color: #357ae8;
     border: none;
   }
 `;
@@ -38,6 +38,7 @@ const getButtonStyles = (props) => {
   if (props.isGoogleSignIn) {
     return googleSignInStyles;
   }
+
   return props.inverted ? invertedButtonStyles : buttonStyles;
 };
 
@@ -55,6 +56,5 @@ export const CustomButtonContainer = styled.button`
   cursor: pointer;
   display: flex;
   justify-content: center;
-
   ${getButtonStyles}
 `;

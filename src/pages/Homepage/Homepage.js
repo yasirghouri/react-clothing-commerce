@@ -5,7 +5,7 @@ import { HomepageContainer } from "./HomepageStyles";
 
 const Homepage = () => {
   return (
-    <HomepageContainer className="homepage">
+    <HomepageContainer>
       <Directory />
     </HomepageContainer>
   );

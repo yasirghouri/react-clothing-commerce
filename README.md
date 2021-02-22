@@ -13,3 +13,4 @@
 9. npm i lodash.memoize
 10. npm i react-stripe-checkout
 11. npm i styled-components
+12. npm i redux-thunk

@@ -14,3 +14,4 @@
 10. npm i react-stripe-checkout
 11. npm i styled-components
 12. npm i redux-thunk
+13. npm i redux-saga

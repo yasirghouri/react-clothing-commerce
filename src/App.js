@@ -9,19 +9,15 @@ import AuthPage from "./pages/Auth/Auth";
 import HomePage from "./pages/Homepage/Homepage";
 import ShopPage from "./pages/Shop/Shop";
 import CheckoutPage from "./pages/Checkout/Checkout";
-import { setCurrentUser } from "./redux/user/userActions";
-import { auth, createUserProfileDocument } from "./firebase/firebase";
 import { selectCurrentUser } from "./redux/user/userSelectors";
 
 class App extends Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    const { setCurrentUser } = this.props;
     // this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
     //   if (userAuth) {
     //     const userRef = createUserProfileDocument(userAuth);
-
     //     (await userRef).onSnapshot((snapShot) => {
     //       setCurrentUser({
     //         id: snapShot.id,
@@ -64,10 +60,4 @@ const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
 });
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setCurrentUser: (user) => dispatch(setCurrentUser(user)),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps)(App);

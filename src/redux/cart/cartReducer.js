@@ -3,6 +3,7 @@ import {
   ADD_ITEM,
   CLEAR_ITEM_FROM_CART,
   REMOVE_ITEM,
+  CLEAR_CART,
 } from "../actionTypes";
 import { addItemToCart, removeItemFromCart } from "../../shared/utility";
 
@@ -27,6 +28,11 @@ const cartReducer = (state = initialState, action) => {
       return {
         ...state,
         cartItems: removeItemFromCart(state.cartItems, action.payload),
+      };
+    case CLEAR_CART:
+      return {
+        ...state,
+        cartItems: [],
       };
     case CLEAR_ITEM_FROM_CART:
       return {

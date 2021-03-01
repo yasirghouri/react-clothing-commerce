@@ -4,6 +4,7 @@ import {
   CLEAR_ITEM_FROM_CART,
   REMOVE_ITEM,
   CLEAR_CART,
+  SET_CART_FROM_FIREBASE,
 } from "../actionTypes";
 import { addItemToCart, removeItemFromCart } from "../../shared/utility";
 
@@ -40,6 +41,11 @@ const cartReducer = (state = initialState, action) => {
         cartItems: state.cartItems.filter(
           (cartItem) => cartItem.id !== action.payload.id
         ),
+      };
+    case SET_CART_FROM_FIREBASE:
+      return {
+        ...state,
+        cartItems: action.payload,
       };
     default:
       return state;

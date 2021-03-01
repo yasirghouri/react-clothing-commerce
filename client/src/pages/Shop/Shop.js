@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { fetchCollectionsStart } from "../../redux/shop/shopActions";
 import { ShopPageContainer } from "./ShopStyles";
 import Spinner from "../../components/Spinner/Spinner";
+import ErrorBoundary from "../../components/ErrorBoundary/ErrorBoundary";
 
 const CollectionsOverviewContainer = lazy(() =>
   import("../../components/CollectionsOverview/CollectionsOverviewContainer")
@@ -19,18 +20,20 @@ const Shop = ({ fetchCollectionsStart, match }) => {
   }, [fetchCollectionsStart]);
   return (
     <ShopPageContainer>
-      <Suspense fallback={<Spinner />}>
-        <Route
-          exact
-          path={`${match.path}`}
-          component={CollectionsOverviewContainer}
-        />
-        <Route
-          exact
-          path={`${match.path}/:collectionId`}
-          component={CollectionContainer}
-        />
-      </Suspense>
+      <ErrorBoundary>
+        <Suspense fallback={<Spinner />}>
+          <Route
+            exact
+            path={`${match.path}`}
+            component={CollectionsOverviewContainer}
+          />
+          <Route
+            exact
+            path={`${match.path}/:collectionId`}
+            component={CollectionContainer}
+          />
+        </Suspense>
+      </ErrorBoundary>
     </ShopPageContainer>
   );
 };
